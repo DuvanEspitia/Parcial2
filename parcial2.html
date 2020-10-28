@@ -10,8 +10,10 @@
  
 </head>
 <body style='margin : 0px; overflow: hidden;'>
+
 <a-scene embedded arjs="sourceType: webcam">
  
+
     <a-assets>
         <img id="sol" src="assets/texturas/sun.png" >
         <img id="sol_n" src="assets/texturas/sun_n.png">
@@ -38,6 +40,7 @@ light="type: point; intensity: 0.8; distance: 0; decay: 70 ; shadowBias:0"
 -->
 <a-entity id="centro" position="0 0 0">
 
+
 <a-marker preset="hiro">
 
   <a-sphere position="0 0 0"  radius="0.3" 
@@ -46,6 +49,22 @@ light="type: point; intensity: 0.8; distance: 0; decay: 70 ; shadowBias:0"
   ></a-sphere>
 </a-marker>
 
+  <a-marker preset='hiro' id="sol">
+    <a-sphere  radius="0.3" 
+    material="src:#sol; normalMap:#sol_n; normalScale:5; normalTextureRepeat:5 5" 
+    animation="property:rotation; to:0 0 360; loop:true;dur:10000; easing:linear "
+    ></a-sphere>
+  </a-marker>
+
+
+
+  <!--Planeta1 --> 
+  <a-entity id="d" rotation="0 0 0"
+  animation ="property:rotation; from:0 0 0;to:0 0 360; loop:true; dur:6000; easing:linear">
+
+  <a-marker type='pattern' url="assets/pattern-a.patt">
+   <a-sphere position="0 0 0.1" radius="0.08"
+   material="src:#Planeta1; normalMap:#planeta1_n; normalScale:5; normalTextureRepeat:5 5" ></a-sphere>
 
 
 
@@ -85,12 +104,41 @@ light="type: point; intensity: 0.8; distance: 0; decay: 70 ; shadowBias:0"
      material="src:#Planeta3; normalMap:#planeta3_n; normalScale:5; normalTextureRepeat:5 5"
      animation="property:rotation; from:0 0 0;to:0 360 0; loop:true; dur:3000; easing:linear" >
 
+  </a-marker>
+  </a-entity>
 
-       <!--LUNA1 -->
-      
 
-        <a-entity rotation="0 0 0"
+  <!--Planeta2 -->
+    <a-entity rotation="0 0 0" 
+    animation ="property:rotation; from:-40 0 0;to:-40 0 360; loop:true; dur:7000; easing:linear" position="0 0 0">
+  
+    <a-marker type='pattern' url="assets/pattern-b.patt">
+  
+       <a-sphere position="0 0 0" radius="0.08" color="white"  
+       material="src:#Planeta2; normalMap:#planeta2_n; normalScale:5; normalTextureRepeat:5 5" 
+       animation="property:rotation; from:45 0 0;to:45 360 0; loop:true; dur:5000; easing:linear" >
+      </a-sphere>
+  
+    </a-marker>
+  
+  </a-entity>
+
+
+  <!--Planeta3 -->
+  <a-entity rotation="0 0 0"
+  animation ="property: rotation; from:0 0 0;to:0 0 360; loop:true; dur:10000; easing:linear">
+
+
+    <a-marker type='pattern' url="assets/pattern-c.patt">
+
+     <a-sphere position="0 0 0.3" radius="0.08" 
+        material="src:#Planeta3; normalMap:#planeta3_n; normalScale:5; normalTextureRepeat:5 5"
+        animation="property:rotation; from:0 0 0;to:0 360 0; loop:true; dur:3000; easing:linear" >
+
+        <!--LUNA1 -->
+            <a-entity rotation="0 0 0"
         animation ="property:rotation; from:0 720 0;to:0 360 0; loop:true; dur:2000; easing:linear" >
+
         <a-sphere position="0.25 0 0" radius="0.045"
          material="src:#luna; normalMap:#luna_n; normalScale:5; normalTextureRepeat:5 5" ></a-sphere>
     </a-entity>
@@ -109,6 +157,39 @@ light="type: point; intensity: 0.8; distance: 0; decay: 70 ; shadowBias:0"
   </a-marker>
     </a-entity>
     <a-entity camera></a-entity>
+              <a-sphere position="0.4 0 0" radius="0.045"
+                material="src:#luna; normalMap:#luna_n; normalScale:5; normalTextureRepeat:5 5" >
+              </a-sphere>
+            </a-entity>
+
+        <!--LUNA2 -->
+            <a-entity rotation_2="0 0 0"
+            animation_2 ="property:rotation; from:0 0 0;to:0 360 0; loop:true; dur:2500; easing:linear" >
+              <a-sphere position="0.6 0 0" radius="0.045" 
+              material="src:#luna; normalMap:#luna_n; normalScale:5; normalTextureRepeat:5 5">
+              </a-sphere>
+            </a-entity>
+      </a-sphere>
+    </a-marker>
+
+  </a-entity>
+
+
+</a-entity>
+
+
+
+
+
+
+
+
+
+
+  
+
+  <a-entity camera></a-entity>
+
 </a-scene>
 
 </body>
